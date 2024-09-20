@@ -1,5 +1,24 @@
-body{
+nav{
     background-color: #44546d;
     color: #afbad2;
-    
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    color: #44546d;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+body{
+    background-color: #bbbebd;
+    color: black;
+
 }
