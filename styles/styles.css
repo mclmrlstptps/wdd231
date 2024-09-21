@@ -100,7 +100,7 @@ footer {
 
 #courseContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-top: 20px;
   }
@@ -114,7 +114,8 @@ footer {
   }
   
   .course.completed {
-    background-color: #2c7a7b; /* A teal color for completed courses */
+    background-color: #774132; /* A different color for completed courses */
+    color: #bbbebd;
   }
   
   .course-code {
