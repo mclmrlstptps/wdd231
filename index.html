@@ -28,6 +28,11 @@
         </nav>
     </header>
 
+
+    <!-- menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+      }); -->
+
     <main>
         <div class="header-container">
             <h1>Course Work</h1>
@@ -40,18 +45,16 @@
                 <button id="filter-wdd">WDD Courses</button>
                 <button id="filter-all">All Courses</button>
             </div>
-            <div id="course-list" class="course-grid"></div>
+            <div id="courseContainer" class="course-grid"></div>
         </section>
+        <div id="totalCredits"></div>
     </main>
 
     <footer>
         <p>&copy; <span id="currentYear"></span> Micaela Morales-Tapia, Kentucky, USA</p>
         <p let oLastModif = new Date(document.lastModified); id="lastModified"></p>
     </footer>
-    <!-- <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-        document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-    </script> -->
+
 </body>
 </html>
 
