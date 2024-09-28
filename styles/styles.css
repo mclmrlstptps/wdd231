@@ -22,14 +22,6 @@ nav a {
     text-decoration: none;
 }
 
-nav a {
-    display: block;
-    color: #afbad2;
-    text-align: center;
-    padding: 1rem;
-    text-decoration: none;
-}
-
 nav{
     background-color: #44546d;
     color: #afbad2;

@@ -1,0 +1,60 @@
+body {
+    background-color: #a59f9f;
+    color: rgb(5, 5, 29);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    color: #c9c5c5;
+    background-color: rgb(1, 31, 22);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+nav a {
+    display: block;
+}
+
+nav ul {
+    text-align: center;
+    color: #c9c5c5;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: #c9c5c5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav a.active {
+    color: rgb(114, 44, 3);
+}
+
+h2 {
+    border-radius: 5px;
+    background-color: rgb(114, 44, 3);
+    justify-content: center;
+    text-align: center; 
+    width: 200px;
+    font-size: 20px;
+}
+
+/* 
+section.business-grid {
+    border: rgb(5, 5, 29) solid 2px;
+    border-radius: 5px;
+} */
+
+
+
+
+
+footer {
+    background-color: rgb(1, 31, 22);
+    color: #c9c5c5;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* rgb(145, 53, 0) */
