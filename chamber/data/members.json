@@ -1,0 +1,75 @@
+{
+    "members": [
+        {
+            "name":"Aster Vintage Co",
+            "address":"3706 Lexington Rd, Lousiville, Kentucky 40207",
+            "phone": "502-208-9433",
+            "website": "https://www.astervintage.com/",
+            "image": null,
+            "membershipLevel":"1",
+            "email":"jen@astervintage.com"
+        },
+
+
+        {
+            "name":"Cerity Partners",
+            "address":"2201 High Wickham Place Louisville, KY 40245",
+            "phone": "(212) 202-1810",
+            "website": "https://ceritypartners.com",
+            "image":null,
+            "membershipLevel":"3",
+            "email": null
+
+        },
+
+        {
+            "name":"Kentucky Chamber of Commerce",
+            "address":"464 Chenault Road Frankfort, KY 40601",
+            "phone": "(502) 695-4700",
+            "website": "https://www.kychamber.com/about-kentucky-chamber/contact-us",
+            "image":null,
+            "membershipLevel":"2",
+            "email": "Email: info@kychamber.com"
+        },
+
+        {
+            "name":"University of Lousiville School of Dentistry",
+            "address":"501 South Preston Street University of Louisville Louisville, KY 40202",
+            "phone": "(800) 334-8635",
+            "website": "https://louisville.edu/dentistry",
+            "image":null,
+            "membershipLevel":"2",
+            "email": null
+        },
+        
+        {
+            "name":"The Rail Explorers",
+            "address":"175 Beasley Rd, Versailles, KY 40383",
+            "phone": "(877)-833-8588",
+            "website": "https://www.railexplorers.net/",
+            "image":null,
+            "membershipLevel":"2",
+            "email": "info@railexplorers.net"
+        },
+
+        {
+            "name":"Churchill Downs",
+            "address":"700 Central Ave, Louisville, KY, 40208",
+            "phone": "502.636.4400",
+            "website": "https://www.churchilldowns.com/",
+            "image":null,
+            "membershipLevel":"2",
+            "email": null
+        },
+
+        {
+            "name":"Lousiville Slugger Museum",
+            "address":"800 West Main St. Louisville, KY 40202",
+            "phone": "1-877-775-8443",
+            "website": "https://www.sluggermuseum.com/",
+            "image":null,
+            "membershipLevel":"2",
+            "email": "museum@sluggermuseum.com"
+        }
+    ]
+}
