@@ -6,12 +6,12 @@ const myGraphic = document.querySelector('#graphic')
 
 
 // required variables for URL//
-const myKey = "e889381047419515a91f0ee098853322"
-const myLat = "49.75"
-const myLong = "6.64"
+const myKey = "6eb44b758b0f478d4c01ea26cb4554c6"
+const myLat = "49.75010293864281"
+const myLong = "6.637455443723131"
 
 // Full path 
-const myURL = '//api.openweathermap.org/data/2.5/weather?lat=49.75&lon=6.64&units=imperial&appid=[e889381047419515a91f0ee098853322]';
+const myURL = 'https://api.openweathermap.org/data/2.5/weather?lat=49.75010293864281&lon=6.637455443723131&units=imperial&appid=6eb44b758b0f478d4c01ea26cb4554c6';
 
 // Current weather data
 async function apiFetch() {
@@ -20,7 +20,7 @@ async function apiFetch() {
       if (response.ok) {
         const data = await response.json();
         console.log(data); // testing only
-        // displayResults(data); // uncomment when ready
+        displayResults(data); // uncomment when ready
       } else {
           throw Error(await response.text());
       }
@@ -28,14 +28,23 @@ async function apiFetch() {
         console.error(error);
     }
   }
-   
-  apiFetch();
-
-  function displayResults(data) {
-    currentTemp.innerHTML = `${data._____}&deg;F`;
-    const iconsrc = `https://openweathermap.org/img/w/${______}.___`;
-    let desc = data.weather[0].______;
-    weatherIcon.setAttribute('___', _____);
-    weatherIcon.setAttribute('___', _____);
-    captionDesc.textContent = `${desc}`;
+     function displayResults(data) {
+        console.log('hello')
+        myTown.innerHTML = data.name
+        myDescription.innerHTML = data.weather[0].description
+        myTemperature.innerHTML = `${data.main.temp}&deg;F`
+        const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        myGraphic.setAttribute('SRC', iconsrc)
+        myGraphic.setAttribute('alt', data.weather[0].description)
+    
+    // currentTemp.innerHTML = `${data._____}&deg;F`;
+    // const iconsrc = `https://openweathermap.org/img/w/${______}.___`;
+    // let desc = data.weather[0].______;
+    // weatherIcon.setAttribute('___', _____);
+    // weatherIcon.setAttribute('___', _____);
+    // captionDesc.textContent = `${desc}`;
   }
+
+
+
+apiFetch();
