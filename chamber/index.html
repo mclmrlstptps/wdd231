@@ -11,7 +11,7 @@
     <meta property="og:url" content="#">
     <title>Kentucky Chamber of Commerce</title>
 
-    <link rel="stylesheet" href="styles/directory.css"/>
+    <link rel="stylesheet" href="styles/index.css"/>
     <link rel="icon" href="chamber/images/favicon.ico">
 </head>
 <body>
@@ -26,9 +26,9 @@
         </nav>
     </header>
     <main>
-        <div class="hero-image">
-            <img src="images/kentucky-hero.jpg" alt="Image of downtown Louisville, Kentucky">
-            <button type="button">Join</button>
+        <div class="hero">
+            <img src="images/kentucky-hero1.jpeg" alt="Image of downtown Louisville, Kentucky">
+            <button class="hero-button">Join</button>
         </div>
         <div class="current-events">
             <h1>Current Events</h1>
@@ -41,6 +41,17 @@
                 <p id="description"></p>
                 <p id="temperature"></p>
             </div>
+        </div>
+        <div class="forcast">
+            <h1>Weather Forecast</h1>
+            <div class="card">
+                <p id="today"></p>
+                <p id="tomorrow"></p>
+                <p id="day3"></p>
+        </div>
+        <div class="members">
+            <h1>Members</h1>
+            <div id="membersContainer" class="members-grid"></div>
         </div>
 
     </main>

@@ -36,15 +36,7 @@ async function apiFetch() {
         const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
         myGraphic.setAttribute('SRC', iconsrc)
         myGraphic.setAttribute('alt', data.weather[0].description)
-    
-    // currentTemp.innerHTML = `${data._____}&deg;F`;
-    // const iconsrc = `https://openweathermap.org/img/w/${______}.___`;
-    // let desc = data.weather[0].______;
-    // weatherIcon.setAttribute('___', _____);
-    // weatherIcon.setAttribute('___', _____);
-    // captionDesc.textContent = `${desc}`;
   }
-
 
 
 apiFetch();
