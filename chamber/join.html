@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course Home Page">
+    <meta name="author" content="Micaela Morales-Tapia">
+    <title>Course Home Page</title>
+
+    <link rel="stylesheet" href="styles/index.css"/>
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a id="Home" class="active" href="index.html">Home</a></li>
+                <li><a id="Chamber" href="chamber/directory.html">Chamber</a></li>
+                <li><a id="GitHub profile" href="#">GitHub Profile</a></li>
+                <li><a id="LinkedIn" href="https://www.linkedin.com">LinkedIn</a></li>
+            </ul>
+            <!-- <div class="hamburger menu">☰</div> -->
+        </nav>
+    </header>
+    <main>
+        <h1>Join our chamber</h1>
+
+        <form action="thankyou.html" method="get">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
+
+             <!-- Applicant's Last Name -->
+             <label for="last-name">Last Name:</label>
+             <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
+ 
+
+            <label for="org-title">Organizational Title:</label>
+            <input type="text" id="org-title" name="org-title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\- ]{7,}" required>
+
+            <!-- Email Address -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" title="Enter your email" autocomplete="email" placeholder="example@example.com" required>
+
+            <!-- Mobile Phone Number -->
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" title="Enter your mobile number" autocomplete="tel-national" required>
+
+            <!-- Organization Name -->
+            <label for="org-name">Organization Name:</label>
+            <input type="text" id="org-name" name="org-name" title="Enter your organization's name" autocomplete="organization" required>
+
+            <!-- Membership Level -->
+            <label for="membership">Membership Level:</label>
+            <select id="membership" name="membership" required>
+                <option value="NP">NP Membership (No fee)</option>
+                <option value="Bronze">Bronze Membership</option>
+                <option value="Silver">Silver Membership</option>
+                <option value="Gold">Gold Membership</option>
+            </select>
+
+            <!-- Organization Description -->
+            <label for="description">Organization Description:</label>
+            <textarea id="description" name="description" title="Describe your business or organization"></textarea>
+
+            <!-- Timestamp (Hidden) -->
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit" id="submit-but">
+
+        </form>
+
+        <!-- Membership Cards and Modals Section -->
+        <section class="membership-cards">
+            <!-- Membership Levels Cards -->
+            <div class="membership-card" id="np-card">
+                <h3>NP Membership</h3>
+                <a href="#np-modal" id="more-info-link">More Information</a>
+            </div>
+            <div class="membership-card" id="bronze-card">
+                <h3>Bronze Membership</h3>
+                <a href="#bronze-modal" id="more-info-link">More Information</a>
+            </div>
+            <div class="membership-card" id="silver-card">
+                <h3>Silver Membership</h3>
+                <a href="#silver-modal" id="more-info-link">More Information</a>
+            </div>
+            <div class="membership-card" id="gold-card">
+                <h3>Gold Membership</h3>
+                <a href="#gold-modal" id="more-info-link">More Information</a>
+            </div>
+        </section>
+
+        <!-- Modals for Membership Levels -->
+        <div id="np-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <p>No fee membership for nonprofit organizations. Includes free event participation, listing in directory, etc.</p>
+            </div>
+        </div>
+        <div id="bronze-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <p>Discounted event tickets, promotional opportunities, and more.</p>
+            </div>
+        </div>
+        <div id="silver-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <p>Includes training, advertising opportunities, and more.</p>
+            </div>
+        </div>
+        <div id="gold-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <p>All benefits plus premium home page advertising and VIP event access.</p>
+            </div>
+        </div>
+        </form>
+    </main>
+</body>
+
+<footer>
+    <p>&copy; <span id="currentYear"></span> Micaela Morales-Tapia, Kentucky, USA</p>
+    <p let oLastModif = new Date(document.lastModified); id="lastModified"></p>
+</footer>
+<script src="scripts/join.js" type="module" defer></script>
+
+</body>
+</html>

@@ -159,3 +159,32 @@ footer {
 
 }
 
+dialog {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: .25rem;
+    padding: 1rem;
+    background-color: #a9877e;
+    box-shadow: 0 0 3rem #774132;
+    width: 90%;
+    max-width: 600px;
+}
+
+::backdrop {
+    background-color: #44546d;
+}
+
+dialog button {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    padding: .5rem 1rem;
+    border: 1px solid (0, 0, 0, 0.1);
+}
+
+.button {
+    transition: scale 0.5s;
+  }
+  
+.button:hover {
+    transform: scale(1.2);
+  }

@@ -137,3 +137,49 @@ function displayError(message) {
 
 // Call the fetch function on page load
 fetchMembers();
+
+
+
+
+// Set current timestamp in hidden field
+document.getElementById('timestamp').value = new Date().toISOString();
+
+// Modal functionality
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close-btn');
+const membershipLinks = document.querySelectorAll('.membership-card a');
+
+// Open modal on click
+membershipLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        modals[index].style.display = 'block';
+    });
+});
+
+// Close modal on close button
+closeButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        modals[index].style.display = 'none';
+    });
+});
+
+// Close modal when clicking outside modal content
+window.addEventListener('click', (event) => {
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+// // Animate membership cards
+// window.addEventListener('load', () => {
+//     document.querySelectorAll('.membership-card').forEach(card => {
+//         card.style.transition = 'opacity 1s ease-in-out, transform 1s ease';
+//         card.style.opacity = '1';
+//         card.style.transform = 'translateY(0)';
+//     });
+// });
+
+

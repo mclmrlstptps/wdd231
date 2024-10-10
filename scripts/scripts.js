@@ -1,9 +1,6 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.hamburger.menu');
     const navMenu = document.querySelector('nav ul');
-  
 
     if (menuToggle && navMenu) {  // Ensure both elements exist
         menuToggle.addEventListener('click', function() {
@@ -27,7 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.remove('show');
       }
     });
-           // Array of courses
+    
+    // Selectors
+    const courseContainer = document.getElementById('courseContainer');
+    const courseDetails = document.querySelector('#course-details');
+
+    // Array of courses
     const courses = [
         {
             subject: 'CSE',
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Web Fundamentals',
             credits: 2,
             certificate: 'Web and Computer Programming',
-            description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming.',
+            description: 'This course introduces students to the World Wide Web and to careers in web site design and development.',
             technology: ['HTML', 'CSS'],
             completed: true
         },
@@ -91,12 +93,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    // Calculate total credits
     const totalCredits = courses.reduce((total, course) => total + course.credits, 0);
     console.log(`Total Credits Required: ${totalCredits}`);
 
+    // Function to display course details in a modal
+    function displayCourseDetails(course) {
+        courseDetails.innerHTML = `
+            <button id="closeModal">❌</button>
+            <h2>${course.subject} ${course.number}</h2>
+            <h3>${course.title}</h3>
+            <p><strong>Credits</strong>: ${course.credits}</p>
+            <p><strong>Certificate</strong>: ${course.certificate}</p>
+            <p>${course.description}</p>
+            <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+        `;
+        courseDetails.showModal();
+
+        document.querySelector('#closeModal').addEventListener('click', () => {
+            courseDetails.close();
+        });
+
+        courseDetails.addEventListener('click', (event) => {
+            if (!courseDetails.contains(event.target.closest('dialog'))) {
+                courseDetails.close();
+            }
+        });
+    }
+
     // Function to display courses
     function displayCourses() {
-        const courseContainer = document.getElementById('courseContainer');
         if (!courseContainer) return;
 
         // Clear the course container
@@ -112,12 +138,45 @@ document.addEventListener('DOMContentLoaded', function() {
             // Display the course subject, number, and title
             courseElement.innerHTML = `
                 <span class="course-code">${course.subject} ${course.number}</span>
-
             `;
             courseContainer.appendChild(courseElement);
+
+            // Add click event to display course details
+            courseElement.addEventListener('click', () => {
+                displayCourseDetails(course);
+            });
         });
     }
 
     // Display the courses when the page loads
     displayCourses();
 });
+
+// const courseContainer = document.querySelector('#courseContainer')
+// const courseDialog = document.querySelector('#mydialog')
+// const courseTitle = document.querySelector('#mydialog h2')
+// const close = document.querySelector('#mydialog button')
+
+// close.addEventListener("click",()=>courseContainer.close())
+
+// function displayCourseDetails(course) {
+//     displayDetails.innerHTML = '';
+//     courseDetails.innerHTML = `
+//     <button id="closeModal">X</button>
+//     <h2>${corse.subject} ${course.number}</h2>
+//     <h3>${course.title}</h3> 
+//     <p><strong>Credits</strong>: ${course.credits}</p>
+//     <p><strong>Certificate</strong>: ${course.certificate}</p>
+//     <p>${course.description}</p>
+//     <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+//     `;
+//     courseDetails.showModal();
+
+//     closeMadal.addEventListener("click", () => {
+//         courseDetails.close();
+//     });
+// }
+
+// courseDiv.addEventListener('click', () => {
+//     displayCourseDetails(course);
+// });
