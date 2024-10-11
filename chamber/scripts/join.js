@@ -41,3 +41,18 @@ window.addEventListener('load', () => {
     });
 });
 
+
+// Populate the thank you page with form data
+const params = new URLSearchParams(window.location.search);
+document.getElementById('firstName').textContent = params.get('firstName');
+document.getElementById('lastName').textContent = params.get('lastName');
+document.getElementById('email').textContent = params.get('email');
+document.getElementById('mobile').textContent = params.get('mobile');
+document.getElementById('businessName').textContent = params.get('businessName');
+document.getElementById('timestamp').textContent = params.get('timestamp');
+
+// Display current year in footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+// Display last modified date in footer
+document.getElementById('lastModified').textContent = document.lastModified;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="styles/thankyou.css"/>
+</head>
+<body>
+    <header>
+        <h1>Thank You for Your Submission!</h1>
+    </header>
+    <main>
+        <section class="thank-you-message">
+            <p>We appreciate you taking the time to complete the form. Below is a summary of the information you submitted:</p>
+            <ul>
+                <li><strong>First Name:</strong> <span id="firstName"></span></li>
+                <li><strong>Last Name:</strong> <span id="lastName"></span></li>
+                <li><strong>Email:</strong> <span id="email"></span></li>
+                <li><strong>Mobile Number:</strong> <span id="mobile"></span></li>
+                <li><strong>Business Name:</strong> <span id="businessName"></span></li>
+                <li><strong>Submission Date:</strong> <span id="timestamp"></span></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Micaela Morales-Tapia, Kentucky, USA</p>
+        <p let oLastModif = new Date(document.lastModified); id="lastModified"></p>
+    </footer>
+    <script src="scripts/join.js" type="module" defer></script>
+</body>
+</html>

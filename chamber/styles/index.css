@@ -23,7 +23,7 @@ main {
 h2 {
     border-radius: 5px;
     background-color: rgb(114, 44, 3);
-    color: #a59f9f;
+    color: #ffffff;
     text-align: center; 
     width: 200px;
     font-size: 20px;
@@ -52,21 +52,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #c9c5c5;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     padding: 10px;
 }
 
 nav a.active {
-    color: #a59f9f;
+    color: #C6C3C3;
 }
 
 button {
     margin: 10px;
     padding: 10px;
     background-color: rgb(5, 5, 29);
-    color: #a59f9f;
+    color: #ffffff;
     border: none;
     cursor: pointer;
 }
