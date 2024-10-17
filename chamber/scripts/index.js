@@ -183,3 +183,24 @@ window.addEventListener('click', (event) => {
 // });
 
 
+
+// discover page js
+const lastVisit = localStorage.getItem('lastVisit');
+const now = Date.now();
+const oneDay = 24 * 60 * 60 * 1000;
+
+if (lastVisit) {
+  const daysSinceLastVisit = Math.floor((now - lastVisit) / oneDay);
+
+  if (daysSinceLastVisit < 1) {
+    document.querySelector('.visitor-message').textContent = "Back so soon! Awesome!";
+  } else if (daysSinceLastVisit === 1) {
+    document.querySelector('.visitor-message').textContent = "You last visited 1 day ago.";
+  } else {
+    document.querySelector('.visitor-message').textContent = `You last visited ${daysSinceLastVisit} days ago.`;
+  }
+} else {
+  document.querySelector('.visitor-message').textContent = "Welcome! Let us know if you have any questions.";
+}
+
+localStorage.setItem('lastVisit', now);

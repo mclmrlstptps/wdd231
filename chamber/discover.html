@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course Home Page">
+    <meta name="author" content="Micaela Morales-Tapia">
+    <title>Course Home Page</title>
+
+    <link rel="stylesheet" href="styles/index.css"/>
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a id="Home" class="active" href="directory.html" >Home</a></li>
+                <li><a id="Directory" href="directory.html">Directory</a></li>
+                <li><a id="Join" href="join.html">Join</a></li>
+                <li><a id="Discover" href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="grid-container">
+            <aside class="sidebar">
+                <h2>Sidebar Info</h2>
+                <div class="visitor-message"></div>
+              </aside>
+            <div class="left-side">
+                <div class="current-events">
+                    <h1>Current Events</h1>
+                    <p></p>
+                </div>
+                <div class="weather">  
+                    <h1>Weather</h1>
+                </div>
+                <div class="attractions">  
+                    <h1>Attractions</h1>
+                    <p> University of Kentcky Stadium</p>
+                    <p>Churchill Downs Kentucky Derby Track</p>
+                    <p>Louisville Slugger Museum</p>
+                    <p>Louisville Temple for the Church of Jesus Christ of Latter-Day Saints</p>
+                    <p>Beautiful rolling green hills</p>
+                    <p>Downtown Louisville</p>
+                </div>
+            </div>
+        <div class="gallery-container">
+            <section class="gallery-content">
+                <img src="images/UofK.jpg" alt="UofK foorball field" loading="lazy">
+                <img src="images/KY-derby.jpg" alt="Kentucky Derby" loading="lazy">
+                <img src="images/slugger.jpg" alt="Lousiville Slugger Museum" loading="lazy">
+                <img src="images/Ky-temple.jpg" alt="Lousiville Kentucky Temple" loading="lazy">
+                <img src="images/barn.jpg" alt="Barn" loading="lazy">
+                <img src="images/kentucky-hero1.jpeg" alt="Kentucky Skyline" loading="lazy">
+            </section>
+        </div>
+
+    </main>
+</body>
+
+<footer>
+    <p>&copy; <span id="currentYear"></span> Micaela Morales-Tapia, Kentucky, USA</p>
+    <p let oLastModif = new Date(document.lastModified); id="lastModified"></p>
+</footer>
+<script src="scripts/index.js" type="module" defer></script>
+
+</body>
+</html>
