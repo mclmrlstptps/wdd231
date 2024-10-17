@@ -60,6 +60,10 @@ p {
     font-family: 'nunito', sans-serif;
 }
 
+.wireframe {
+    max-width: 40px;
+}
+
 footer {
     background-color: #84592b;
     color: #f1f1f1;
