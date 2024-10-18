@@ -260,60 +260,26 @@ footer {
     transform: translateY(0);
 }
 
-/* Discover css */
-
 .grid-container {
-    display: grid;
-    grid-template-columns: 40% 60%; /* 40% for the left section, 60% for the gallery */
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Left Side - Events, Weather, and Attractions */
-  .left-side h1, .left-side p {
-    margin: 0;
-    padding: 10px;
-  }
-  
-  .current-events, .weather, .attractions {
-    margin-bottom: 20px;
-    border: 2px solid #000; /* Apply border to each section */
-    padding: 10px;
-  }
-  
-  .attractions p {
-    margin-left: 20px; /* Indentation for the list items */
-  }
-  
-  /* Right Side - Gallery */
-  .gallery-content {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .gallery-content img {
     width: 100%;
-    height: auto;
-    border: 5px solid #000; /* Border around images */
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .gallery-content img:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-  }
-  
-  /* Mobile View */
-  @media screen and (max-width: 768px) {
+}
+
+.left-side {
+    width: 40%;
+}
+
+.gallery-container {
+    width: 60%;
+}
+
+
+@media (max-width: 768px) {
     .grid-container {
-      grid-template-columns: 1fr; /* Single column layout for mobile */
+        flex-direction: column; /* Stack children vertically */
     }
-  }
+    
+    .left-side,
+    .gallery-container {
+        width: 100%; /* Full width on mobile */
+    }
