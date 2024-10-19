@@ -1,0 +1,54 @@
+.bookshelf {
+    background-color: #35190e;
+    padding: 20px;
+    border: 15px solid #462c1e;
+    width: 600px;
+    margin: 50px auto;
+}
+
+.shelf {
+    height: 120px;
+    background-color: #462c1e;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.book {
+    width: 40px;
+    background-color: var(--book-color);
+    border-radius: 3px 3px 0 0;
+    margin: 0px;
+}
+
+/* Book color variants */
+.book {
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+}
+
+/* Add these to your existing CSS */
+.shelf {
+    position: relative;
+}
+
+.shelf::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #2c1810;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.bookshelf {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.book:hover {
+    transform: translateY(-12px);
+    transition: transform 0.2s ease;
+}

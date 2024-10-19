@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory">
+    <meta name="author" content="Micaela Morales-Tapia">
+    <meta property="og:title" content="Chamber Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="#">
+    <meta property="og:url" content="#">
+    <title>Booked Up</title>
+
+    <link rel="icon" href="images/bookedup-favicon.ico">
+
+    <link rel="stylesheet" href="styles/booked-up.css">
+    <link rel="icon" href="#">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">   
+</head>
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="images/logo-bookedup.png" alt="booked up logo">
+            <ul>
+                <li><a id="Discover" class="active" href="" >Discover</a></li>
+                <li><a id="tbr" href="">To Be Read</a></li>
+                <li><a id="review" href="">My Reviews</a></li>
+                <li><a id="profile" href="">My profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <input
+                type="text"
+                class="search-box"
+                placeholder="Search Author, Genre, Title, etc."
+                aria-label="search"
+            >
+            <ul class="search-results">
+                <li class="search-item">Fantasy</li>
+                <li class="search-item">Science Fiction</li>
+                <li class="search-item">Dystopian</li>
+                <li class="search-item">Action & Adventure</li>
+                <li class="search-item">Mystery</li>
+                <li class="search-item">Horror</li>
+                <li class="search-item">Thriller & Suspense</li>
+                <li class="search-item">Historical Fiction</li>
+                <li class="search-item">Romance</li>
+                <li class="search-item">LGBTQ+</li>
+                <li class="search-item">Contemporary Fiction</li>
+                <li class="search-item">Literary Fiction</li>
+                <li class="search-item">Graphic Novel</li>
+                <li class="search-item">Short Story</li>
+                <li class="search-item">Young Adult</li>
+                <li class="search-item">Children's</li>
+                <li class="search-item">Nonfiction</li>
+                <li class="search-item">Memoir & Autobiography</li>
+                <li class="search-item">Biography</li>
+                <li class="search-item">Art & Photography</li>
+                <li class="search-item">Self-help</li>
+                <li class="search-item">History</li>
+                <li class="search-item">Travel</li>
+                <li class="search-item">True Crime</li>
+                <li class="search-item">Humor</li>
+                <li class="search-item">Guide/Hot-to</li>
+                <li class="search-item">Religion & Spirituality</li>
+                <li class="search-item">Humanitites & Social Sciences</li>
+                <li class="search-item">Parenting & Family</li>
+                <li class="search-item">Science & Technology</li>
+
+            </ul>
+        </div>
+
+        <div class="card">
+            <img id="bookCover" src="" alt="Book cover">
+            <h2 id="title"></h2>
+            <p id="author"></p>
+            <p id="genre"></p>
+            <p id="rating"></p>
+            <p id="summary"></p>
+        </div>
+
+    </main>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Micaela Morales-Tapia, Kentucky, USA | GoogleBooks.com</p>
+        <p id="last-modified"></p>
+    </footer>
+    <script src="scripts/booked-up.js"></script>
+</body>
+</html>

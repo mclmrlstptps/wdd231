@@ -70,3 +70,45 @@ footer {
     padding: 10px;
     margin-top: 10px;
 }
+
+.search-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'nunito', sans-serif;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #442d1c;
+    font-size: 16px;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: #f1f1f1;
+}
+
+.search-results {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    color: black;
+}
+
+.search-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #743014;
+    transition: background-color 0.2s ease;
+}
+
+.search-item:hover {
+    background-color: #B9AA73;
+}
+
+.hidden {
+    display: none;
+}

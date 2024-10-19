@@ -1,3 +1,5 @@
+
+
 // HTML elements //
 const myTown = document.querySelector('#town');
 const myDescription = document.querySelector('#description');
