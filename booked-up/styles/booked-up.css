@@ -1,3 +1,5 @@
+/* General CSS */
+
 body {
     background-color: #e8d1a7;
     color: #442d1c;
@@ -9,6 +11,8 @@ body {
 #logo {
     display: flex;
     max-width: 20%;
+    margin-left: 10px;
+    
 }
 
 .header-contianer {
@@ -21,6 +25,9 @@ body {
 header {
     background-color: #84592b;
     color: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px;
+
 }
 nav ul {
     list-style-type: none;
@@ -28,6 +35,7 @@ nav ul {
     justify-content: space-around;
     margin: 0;
     padding: 0;
+    font-family: 'josefin slab', serif;
 }
 
 nav  a {
@@ -40,10 +48,12 @@ nav  a {
 
 nav a:hover {
     color: black;
+    font-weight: bold;
 }
 
 .active {
     color: black;
+    font-weight: bold;
 }
 
 
@@ -71,44 +81,48 @@ footer {
     margin-top: 10px;
 }
 
-.search-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    font-family: 'nunito', sans-serif;
+
+.book-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 }
 
-.search-box {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 2px solid #442d1c;
-    font-size: 16px;
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    background-color: #f1f1f1;
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
-.search-results {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    color: black;
+#book-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.search-item {
-    padding: 10px 15px;
-    border-bottom: 1px solid #743014;
-    transition: background-color 0.2s ease;
+.category-title {
+    font-size: 24px;
+    margin: 10px 0;
 }
 
-.search-item:hover {
-    background-color: #B9AA73;
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.hidden {
-    display: none;
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.book-item img {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+}
+
+.book-item p {
+    text-align: center;
 }

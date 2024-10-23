@@ -34,3 +34,28 @@ function createBooks() {
 
 // Initialize the bookshelf when the page loads
 document.addEventListener('DOMContentLoaded', createBooks);
+
+
+function createBooks() {
+    const shelves = document.querySelectorAll('.shelf');
+    
+    shelves.forEach(shelf => {
+        const numberOfBooks = Math.floor(Math.random() * 5) + 6;
+        
+        for (let i = 0; i < numberOfBooks; i++) {
+            const book = document.createElement('div');
+            book.className = 'book';
+            
+            const height = Math.floor(Math.random() * 20) + 80;
+            book.style.height = `${height}%`;
+            
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            book.style.setProperty('--book-color', randomColor);
+            
+            // Add click event listener to each book
+            book.addEventListener('click', () => showBookPopup(book));
+            
+            shelf.appendChild(book);
+        }
+    });
+}
