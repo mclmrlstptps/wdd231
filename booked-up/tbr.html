@@ -32,7 +32,22 @@
             </ul>
         </nav>
     </header>
-    <div class="bookshelf">
+    <div id="book-popup" class="popup hidden">
+        <span class="popup-close">&times;</span>
+        <div class="popup-content">
+            <div class="popup-cover">
+                <img id="popup-cover-image" src="" alt="Book Cover">
+            </div>
+            <div class="popup-info">
+                <h2 id="popup-title"></h2>
+                <p id="popup-author"></p>
+                <p id="popup-rating"></p>
+                <div class="popup-summary" id="popup-summary-text"></div>
+                <button class="mark-as-read-btn">Mark as Read</button>
+            </div>
+        </div>
+    </div>
+    <div id="tbr-bookshelf">
         <div class="shelf"></div>
         <div class="shelf"></div>
         <div class="shelf"></div>

@@ -137,7 +137,10 @@ footer {
 }
 
 .book-item p {
-    text-align: center;
+    font-size: 15px; /* Adjust this size to your preference */
+    text-align: center; /* Centers the text */
+    margin-top: 5px; /* Add some spacing between the image and text */
+    color: #442d1c; /* Text color to match the site’s theme */
 }
 
 /* Pop-up styling */
@@ -211,7 +214,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #9d9167; 
+    background-color: #743014; 
     color: white;
     padding: 16px;
     border-radius: 4px;
@@ -303,5 +306,53 @@ footer {
     transition: transform 0.2s ease;
 }
 
-/* #fffbdc */
+/* TBR page styling */
 
+#tbr-bookshelf {
+    background-color: #35190e; /* Dark background for bookshelf */
+    padding: 20px; /* Padding around the bookshelf */
+    border: 15px solid #462c1e; /* Border around the bookshelf */
+    width: 80%; /* Make the bookshelf bigger */
+    margin: 20px auto; /* Center the bookshelf horizontally */
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+#tbr-bookshelf .shelf {
+    position: relative;
+    height: 120px; /* Same shelf height */
+    background-color: #462c1e; /* Shelf background color */
+    margin-bottom: 20px; /* Space between shelves */
+    padding: 10px;
+    display: flex;
+    align-items: flex-end; /* Align books to the bottom */
+    gap: 10px; /* Space between books */
+}
+
+#tbr-bookshelf .shelf::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #2c1810; /* Darker bottom border for shelf */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+#tbr-bookshelf .book {
+    width: 40px; /* Book width */
+    background-color: white; /* Book background */
+    border-radius: 3px 3px 0 0; /* Rounded top corners */
+    margin: 0;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Book shadow */
+    transition: background-color 0.3s, transform 0.2s ease; /* Smooth transitions */
+}
+
+#tbr-bookshelf .book.active {
+    background-color: var(--book-color); /* Custom color for active book */
+}
+
+#tbr-bookshelf .book:hover {
+    transform: translateY(-12px); /* Lift book on hover */
+}
