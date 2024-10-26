@@ -130,63 +130,53 @@ footer {
 
 
 /* Pop-up styling */
-.popup {
+#book-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;  /* Responsive width */
-    max-width: 600px;  /* Maximum width */
+    width: 90%;
+    max-width: 600px;
     background-color: rgb(245, 237, 209);
-    border: 2px solid #000;
+    border: 2px solid black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
     padding: 20px;
     border-radius: 10px;
-    overflow: hidden;  /* Prevent overflow */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Popup content layout */
+/* Pop-up content layout */
 .popup-content {
     display: flex;
     flex-direction: column;
 }
 
-/* Top section layout */
-.popup-cover {
-    width: 100px; /* Fixed width for the cover */
-    margin-right: 20px; /* Space between cover and info */
+.popup-top {
+    display: flex;
+    gap: 10px;
+}
+
+.popup-cover img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .popup-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    flex-grow: 1; /* Allow the info section to grow */
+    flex-grow: 1;
 }
 
-/* Flexbox for aligning cover and info */
-.popup-top {
-    display: flex; /* Flexbox for top section */
-    gap: 10px; /* Space between cover and info */
-}
-
-/* Summary area */
 .popup-summary {
     margin-top: 10px;
     font-size: 14px;
     line-height: 1.5;
-    max-height: 150px;  /* Optional max height for the summary */
-    overflow-y: auto;  /* Allow scrolling if content exceeds */
-}
-
-/* Adjustments to cover image */
-.popup-cover img {
-    width: 100px; /* Adjust as necessary */
-    height: 150px; /* Adjust as necessary */
-    object-fit: cover;
+    max-height: 150px;
+    overflow-y: auto;
 }
 
 /* Close button styling */
@@ -196,13 +186,31 @@ footer {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
-    background-color: transparent; /* Make the background transparent */
-    color: #442d1c; /* Use the same color as the popup background for visibility */
-    font-weight: bold; /* Make the "x" bold */
-    border: none; /* Remove any borders */
-    padding: 5px; /* Add some padding for better click area */
+    background-color: transparent;
+    color: #442d1c;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
 }
 
+/* Add-to-TBR button styling */
+.add-to-tbr {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #84592b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.add-to-tbr:hover {
+    background-color: #743014;
+}
+
+/* Hide and show popup */
 .hidden {
     display: none;
 }
@@ -211,7 +219,7 @@ footer {
 
 
 /* Button styling */
-.add-tbr-button {
+.add-to-tbr {
     margin-top: 15px; /* Space above the button */
     padding: 10px 20px; /* Padding around the button */
     background-color: #84592b; /* Background color */
@@ -224,7 +232,7 @@ footer {
 }
 
 /* Hover effect */
-.add-tbr-button:hover {
+.add-to-tbr:hover {
     background-color: #743014; /* Darker shade on hover */
 }
 
