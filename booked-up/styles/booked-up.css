@@ -13,10 +13,9 @@ body {
     display: flex;
     max-width: 20%;
     margin-left: 10px;
-    
 }
 
-.header-contianer {
+.header-container {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -28,8 +27,8 @@ header {
     color: #f1f1f1;
     border-radius: 10px;
     margin: 10px;
-
 }
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -39,7 +38,7 @@ nav ul {
     font-family: 'josefin slab', serif;
 }
 
-nav  a {
+nav a {
     color: #f1f1f1;
     display: block;
     text-align: center;
@@ -57,13 +56,11 @@ nav a:hover {
     font-weight: bold;
 }
 
-
 main {
     background-color: #e8d1a7;
     color: #442d1c;
     display: flex;
 }
-
 
 h1 {
     font-family: 'josefin slab', serif;
@@ -83,11 +80,6 @@ footer {
     padding: 10px;
     margin-top: 10px;
 }
-
-
-
-
-
 
 /* Book-container */
 
@@ -125,9 +117,6 @@ footer {
 .book-item p {
     text-align: center;
 }
-
-
-
 
 /* Pop-up styling */
 #book-popup {
@@ -179,8 +168,8 @@ footer {
     overflow-y: auto;
 }
 
-/* Close button styling */
-.popup-close {
+/* Fixed close button styling */
+.popup-close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -193,8 +182,12 @@ footer {
     padding: 5px;
 }
 
-/* Add-to-TBR button styling */
-.add-to-tbr {
+.popup-close-btn:hover {
+    color: #743014;
+}
+
+/* Fixed Add to TBR button styling */
+#add-to-tbr {  /* Changed from .add-to-tbr to #add-to-tbr */
     margin-top: 15px;
     padding: 10px 20px;
     background-color: #84592b;
@@ -206,78 +199,124 @@ footer {
     transition: background-color 0.3s;
 }
 
-.add-to-tbr:hover {
+#add-to-tbr:hover {  /* Changed from .add-to-tbr to #add-to-tbr */
     background-color: #743014;
 }
 
-/* Hide and show popup */
 .hidden {
-    display: none;
+    display: none !important;
 }
-
-
-
-
-/* Button styling */
-.add-to-tbr {
-    margin-top: 15px; /* Space above the button */
-    padding: 10px 20px; /* Padding around the button */
-    background-color: #84592b; /* Background color */
-    color: white; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-/* Hover effect */
-.add-to-tbr:hover {
-    background-color: #743014; /* Darker shade on hover */
-}
-
-
-
-
 
 /* Bookshelf Styles */
+.bookshelf {
 
+    padding: 20px;
+    border: 15px solid #42200e;
+    width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Shelf styling */
+.shelf {
+    height: 130px; /* Increased height to accommodate taller books */
+    background-color: #462c1e;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px; /* Reduced gap for tighter book placement */
+    position: relative;
+}
+
+.shelf::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background-color: #291107;
+}
+
+/* Book styling */
+.book {
+    position: relative;
+    border-radius: 2px 2px 0 0;
+    margin: 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book:hover {
+    transform: translateY(-15px) !important; /* Override any random rotation on hover */
+}
+/* Enhanced book spine effect */
+.book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.book::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.book-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    font-family: 'nunito', sans-serif;
+    pointer-events: none; /* Prevents text selection */
+}
+
+/* Add slight perspective to bookshelf */
 .bookshelf {
     background-color: #35190e;
     padding: 20px;
     border: 15px solid #462c1e;
-    width: 600px; /* Width of the bookshelf */
-    margin: 50px; /* Margin around the bookshelf */
-    box-shadow: 0 0 20px rgba(0,0,0,0.3); /* Shadow for the bookshelf */
+    width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    perspective: 1000px;
 }
 
-.shelf {
-    height: 120px; /* Height of each shelf */
-    background-color: #462c1e; /* Shelf color */
-    margin-bottom: 20px; /* Space between shelves */
-    padding: 10px; /* Padding inside shelves */
-    display: flex; /* Flexbox for book alignment */
-    align-items: flex-end; /* Align books to the bottom */
-    gap: 10px; /* Space between books */
-    position: relative; /* For the pseudo-element */
+/* Clear TBR button styling */
+#clear-tbr-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #84592b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.book {
-    width: 40px; /* Width of each book */
-    background-color: var(--book-color); /* Book color */
-    border-radius: 3px 3px 0 0; /* Rounded corners on top */
-    margin: 0; /* No margin */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.2); /* Shadow effect */
-    transition: transform 0.2s ease; /* Transition for hover effect */
+#clear-tbr-btn:hover {
+    background-color: #743014;
 }
-
-/* Hover effect for books */
-.book:hover {
-    transform: translateY(-12px); /* Move up on hover */
-}
-
-#book-container {
-    flex: 1; /* Allow the book container to grow */
-    margin-right: 20px; /* Space between book container and bookshelf */
-}
-
