@@ -88,7 +88,7 @@ main {
 /* Large bookshelf */
 .large-bookshelf {
     width: 800px;
-    height: 800px;
+    height: 900px; /* Increased height to accommodate taller books */
     background-color: #2b1810;
     padding: 20px;
     display: flex;
@@ -108,6 +108,7 @@ main {
     align-items: flex-end;
     gap: 10px;
     position: relative;
+    height: 180px; /* Increased height for taller books */
 }
 
 .large-shelf::after {
@@ -168,6 +169,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Book label adjustments for varied heights */
 .book-label {
     position: absolute;
     left: 50%;
@@ -180,7 +182,7 @@ footer {
     width: 80px;
     text-align: center;
     font-family: 'nunito', sans-serif;
-    pointer-events: none; /* Prevents text selection */
+    pointer-events: none;
 }
 
 /* Add slight perspective to bookshelf */
@@ -194,7 +196,7 @@ footer {
     perspective: 1000px;
 }
 
-TBR Popup styling
+/* Popup styling */
 #tbr-book-popup {
     position: fixed;
     top: 50%;
@@ -203,34 +205,16 @@ TBR Popup styling
     width: 90%;
     max-width: 600px;
     background-color: rgb(245, 237, 209);
-    border: 2px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #442d1c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    padding: 20px;
+    padding: 0;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Remove from TBR button */
-#remove-from-tbr {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #84592b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-#remove-from-tbr:hover {
-    background-color: #743014;
-}
-
-/* Ensure popup content styling matches discover page */
 .popup-content {
+    position: relative;
+    padding: 20px;
     display: flex;
     gap: 20px;
 }
@@ -239,16 +223,33 @@ TBR Popup styling
     width: 150px;
     height: 200px;
     object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-info h3 {
+    margin: 0 0 10px 0;
+    color: #442d1c;
+    font-family: 'josefin slab', serif;
+}
+
+.popup-info p {
+    margin: 5px 0;
+    color: #442d1c;
 }
 
 .popup-summary {
     margin-top: 15px;
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
+    padding-right: 10px;
+    line-height: 1.5;
 }
 
 .popup-close-btn {
@@ -260,16 +261,38 @@ TBR Popup styling
     background: none;
     border: none;
     color: #442d1c;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
 }
 
 .popup-close-btn:hover {
-    color: #743014;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
+.remove-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #84592b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
+.remove-btn:hover {
+    background-color: #743014;
+}
 
-
-
+.hidden {
+    display: none !important;
+}
 
 /* Responsive design */
 @media (max-width: 900px) {
