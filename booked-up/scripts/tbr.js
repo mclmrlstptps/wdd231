@@ -40,6 +40,50 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
     `;
+
+       // Get additional button
+       const markAsReadButton = document.getElementById('mark-as-read');
+
+       // Function to mark book as read
+       function markAsRead(index) {
+           const tbrShelf = JSON.parse(localStorage.getItem('tbrShelf')) || [];
+           if (index >= 0 && index < tbrShelf.length) {
+               const book = tbrShelf[index];
+               
+               // Get or initialize read books array
+               const readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
+               
+               // Add book to read books
+               readBooks.push({
+                   ...book,
+                   dateRead: new Date().toISOString(),
+                   readFromTBR: true
+               });
+               
+               // Update localStorage
+               localStorage.setItem('readBooks', JSON.stringify(readBooks));
+               
+               // Remove from TBR
+               tbrShelf.splice(index, 1);
+               localStorage.setItem('tbrShelf', JSON.stringify(tbrShelf));
+               
+               // Update display
+               displayBooks();
+               bookPopup.classList.add('hidden');
+               
+               // Show confirmation
+               alert(`"${book.title}" has been marked as read and moved to your Read Books collection!`);
+           }
+       }
+   
+       // Add event listener for mark as read button
+       if (markAsReadButton) {
+           markAsReadButton.addEventListener('click', (e) => {
+               e.stopPropagation();
+               const index = parseInt(removeButton.dataset.bookIndex);
+               markAsRead(index);
+           });
+       }
     
     // Add popup to document if it doesn't exist
     if (!document.getElementById('tbr-book-popup')) {
