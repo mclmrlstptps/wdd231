@@ -1,0 +1,288 @@
+/* Page structure */
+body {
+    background-color: #e8d1a7;
+    color: #442d1c;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: nunito, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #84592b;
+    color: #f1f1f1;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#logo {
+    max-width: 20%;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    font-family: 'josefin slab', serif;
+}
+
+nav a {
+    color: #f1f1f1;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.active {
+    color: black;
+    font-weight: bold;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center; /* Center children horizontally */
+}
+
+/* TBR heading */
+#tbr-heading {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center; /* Center the heading container */
+    display: flex;
+    justify-content: center; /* Center heading horizontally */
+}
+
+#tbr-heading h1 {
+    font-family: 'josefin slab', serif;
+    color: #442d1c;
+    font-size: 2.5em;
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Bookshelf container */
+.large-bookshelf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Large bookshelf */
+.large-bookshelf {
+    width: 800px;
+    height: 800px;
+    background-color: #2b1810;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border: 15px solid #1a0f0a;
+}
+
+/* Shelf styling */
+.large-shelf {
+    flex: 1;
+    background-color: #3b2318;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+}
+
+.large-shelf::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background-color: #291107;
+}
+
+/* Footer */
+footer {
+    background-color: #84592b;
+    color: #f1f1f1;
+    padding: 10px;
+    margin-top: auto;
+    text-align: center;
+}
+
+/* Book styling */
+.book {
+    position: relative;
+    border-radius: 2px 2px 0 0;
+    margin: 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book:hover {
+    transform: translateY(-15px) !important; /* Override any random rotation on hover */
+}
+
+/* Enhanced book spine effect */
+.book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.book::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.book-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+    font-size: 11px;
+    color: black;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    font-family: 'nunito', sans-serif;
+    pointer-events: none; /* Prevents text selection */
+}
+
+/* Add slight perspective to bookshelf */
+.bookshelf {
+    background-color: #35190e;
+    padding: 20px;
+    border: 15px solid #462c1e;
+    width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    perspective: 1000px;
+}
+
+TBR Popup styling
+#tbr-book-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: rgb(245, 237, 209);
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove from TBR button */
+#remove-from-tbr {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #84592b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#remove-from-tbr:hover {
+    background-color: #743014;
+}
+
+/* Ensure popup content styling matches discover page */
+.popup-content {
+    display: flex;
+    gap: 20px;
+}
+
+.popup-cover img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.popup-info {
+    flex: 1;
+}
+
+.popup-summary {
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #442d1c;
+}
+
+.popup-close-btn:hover {
+    color: #743014;
+}
+
+
+
+
+
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .large-bookshelf {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+    
+    #tbr-heading h1 {
+        font-size: 2em;
+        padding-left: 5%;
+    }
+}
+
+
