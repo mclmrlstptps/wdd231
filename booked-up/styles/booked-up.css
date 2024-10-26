@@ -61,7 +61,9 @@ nav a:hover {
 main {
     background-color: #e8d1a7;
     color: #442d1c;
+    display: flex;
 }
+
 
 h1 {
     font-family: 'josefin slab', serif;
@@ -82,29 +84,12 @@ footer {
     margin-top: 10px;
 }
 
-/* Discover page styling */
-
-/* Container for the main layout */
-.main-container {
-    display: flex; /* Use flexbox for layout */
-    width: 100%; /* Full width of the viewport */
-}
-
-/* Book container styling */
-.book-container {
-    width: 50%; /* Set to occupy 50% of the screen width */
-    padding: 20px; /* Optional padding for aesthetics */
-    overflow-y: auto; /* Enable scrolling if content exceeds height */
-}
 
 
-/* Book-container styling */
-.book-section {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-}
 
+
+
+/* Book-container */
 
 #book-container {
     display: flex;
@@ -134,14 +119,15 @@ footer {
     width: 100px;
     height: 100px;
     background-color: #e0e0e0;
+    object-fit: cover;
 }
 
 .book-item p {
-    font-size: 15px; /* Adjust this size to your preference */
-    text-align: center; /* Centers the text */
-    margin-top: 5px; /* Add some spacing between the image and text */
-    color: #442d1c; /* Text color to match the site’s theme */
+    text-align: center;
 }
+
+
+
 
 /* Pop-up styling */
 .popup {
@@ -149,9 +135,9 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* Make the width responsive */
-    max-width: 400px; /* Set a maximum width */
-    background-color: #fffbdc;
+    width: 90%;  /* Responsive width */
+    max-width: 600px;  /* Maximum width */
+    background-color: rgb(245, 237, 209);
     border: 2px solid #000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -159,200 +145,131 @@ footer {
     flex-direction: column;
     padding: 20px;
     border-radius: 10px;
-    max-height: 80vh; /* Limit the height of the popup */
-    overflow: hidden; /* Prevent overflow of the entire popup */
+    overflow: hidden;  /* Prevent overflow */
 }
 
-.popup.hidden {
-    display: none;
-}
-
+/* Popup content layout */
 .popup-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10px;
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: calc(80vh - 40px); /* Adjust max-height to account for padding and close button */
+    display: flex;
+    flex-direction: column;
 }
 
-.popup-cover img {
-    width: 100px;
-    height: 150px;
-    object-fit: cover;
+/* Top section layout */
+.popup-cover {
+    width: 100px; /* Fixed width for the cover */
+    margin-right: 20px; /* Space between cover and info */
 }
 
 .popup-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-grow: 1; /* Allow the info section to grow */
 }
 
-.popup-info h2 {
-    margin: 0;
-    font-size: 1.5em;
+/* Flexbox for aligning cover and info */
+.popup-top {
+    display: flex; /* Flexbox for top section */
+    gap: 10px; /* Space between cover and info */
 }
 
-.popup-info p {
-    margin: 5px 0;
-}
-
+/* Summary area */
 .popup-summary {
-    grid-column: span 2; /* Ensure summary spans full width */
-    margin-top: 10px; /* Add margin for spacing */
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 150px;  /* Optional max height for the summary */
+    overflow-y: auto;  /* Allow scrolling if content exceeds */
 }
 
+/* Adjustments to cover image */
+.popup-cover img {
+    width: 100px; /* Adjust as necessary */
+    height: 150px; /* Adjust as necessary */
+    object-fit: cover;
+}
+
+/* Close button styling */
 .popup-close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     cursor: pointer;
+    background-color: transparent; /* Make the background transparent */
+    color: #442d1c; /* Use the same color as the popup background for visibility */
+    font-weight: bold; /* Make the "x" bold */
+    border: none; /* Remove any borders */
+    padding: 5px; /* Add some padding for better click area */
 }
 
-#tbr-alert {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #743014; 
-    color: white;
-    padding: 16px;
-    border-radius: 4px;
-    z-index: 1000;
-    transition: opacity 0.5s ease; /* Transition for fading */
-    opacity: 1; /* Start fully opaque */
+.hidden {
+    display: none;
 }
 
-#tbr-alert.hidden {
-    display: none; /* Hide when class 'hidden' is added */
+
+
+
+/* Button styling */
+.add-tbr-button {
+    margin-top: 15px; /* Space above the button */
+    padding: 10px 20px; /* Padding around the button */
+    background-color: #84592b; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
-/* Bookshelf styling (Discover) */
-/* Main container styling */
-#main-container {
-    display: flex; /* Use flexbox for layout */
-    width: 100%; /* Full width of the viewport */
+/* Hover effect */
+.add-tbr-button:hover {
+    background-color: #743014; /* Darker shade on hover */
 }
 
-/* Book container styling */
-#book-container {
-    width: 50%; /* Set to occupy 50% of the screen width */
-    padding: 20px; /* Optional padding for aesthetics */
-    overflow-y: auto; /* Enable scrolling if content exceeds height */
-}
 
-/* Right content styling */
-.right-content {
-    width: 50%; /* Set the right section to occupy 50% of the screen width */
-    padding: 20px; /* Padding for aesthetics */
-    margin-right: 20px; /* Add space to the right side */
-}
 
-/* Bookshelf styling */
+
+
+/* Bookshelf Styles */
+
 .bookshelf {
     background-color: #35190e;
     padding: 20px;
     border: 15px solid #462c1e;
-    width: calc(100% - 20px); /* Adjust width to account for margin */
-    margin-top: 20px; /* Space between book container and bookshelf */
-    box-sizing: border-box; /* Ensure padding and border are included in width */
+    width: 600px; /* Width of the bookshelf */
+    margin: 50px; /* Margin around the bookshelf */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3); /* Shadow for the bookshelf */
 }
 
 .shelf {
-    height: 120px;
-    background-color: #462c1e;
-    margin-bottom: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
+    height: 120px; /* Height of each shelf */
+    background-color: #462c1e; /* Shelf color */
+    margin-bottom: 20px; /* Space between shelves */
+    padding: 10px; /* Padding inside shelves */
+    display: flex; /* Flexbox for book alignment */
+    align-items: flex-end; /* Align books to the bottom */
+    gap: 10px; /* Space between books */
+    position: relative; /* For the pseudo-element */
 }
 
 .book {
-    width: 40px;
-    background-color: white; /* Start with white */
-    border-radius: 3px 3px 0 0;
-    margin: 0;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s; /* Smooth transition for color change */
+    width: 40px; /* Width of each book */
+    background-color: var(--book-color); /* Book color */
+    border-radius: 3px 3px 0 0; /* Rounded corners on top */
+    margin: 0; /* No margin */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2); /* Shadow effect */
+    transition: transform 0.2s ease; /* Transition for hover effect */
 }
 
-.book.active {
-    background-color: var(--book-color); /* Change this to your desired color */
-}
-
-/* Shelf styles */
-.shelf {
-    position: relative;
-}
-
-.shelf::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: #2c1810;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.bookshelf {
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
+/* Hover effect for books */
 .book:hover {
-    transform: translateY(-12px);
-    transition: transform 0.2s ease;
+    transform: translateY(-12px); /* Move up on hover */
 }
 
-/* TBR page styling */
-
-#tbr-bookshelf {
-    background-color: #35190e; /* Dark background for bookshelf */
-    padding: 20px; /* Padding around the bookshelf */
-    border: 15px solid #462c1e; /* Border around the bookshelf */
-    width: 80%; /* Make the bookshelf bigger */
-    margin: 20px auto; /* Center the bookshelf horizontally */
-    box-sizing: border-box;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+#book-container {
+    flex: 1; /* Allow the book container to grow */
+    margin-right: 20px; /* Space between book container and bookshelf */
 }
 
-#tbr-bookshelf .shelf {
-    position: relative;
-    height: 120px; /* Same shelf height */
-    background-color: #462c1e; /* Shelf background color */
-    margin-bottom: 20px; /* Space between shelves */
-    padding: 10px;
-    display: flex;
-    align-items: flex-end; /* Align books to the bottom */
-    gap: 10px; /* Space between books */
-}
-
-#tbr-bookshelf .shelf::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: #2c1810; /* Darker bottom border for shelf */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-#tbr-bookshelf .book {
-    width: 40px; /* Book width */
-    background-color: white; /* Book background */
-    border-radius: 3px 3px 0 0; /* Rounded top corners */
-    margin: 0;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Book shadow */
-    transition: background-color 0.3s, transform 0.2s ease; /* Smooth transitions */
-}
-
-#tbr-bookshelf .book.active {
-    background-color: var(--book-color); /* Custom color for active book */
-}
-
-#tbr-bookshelf .book:hover {
-    transform: translateY(-12px); /* Lift book on hover */
-}

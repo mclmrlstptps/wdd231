@@ -12,10 +12,7 @@
     <title>Booked Up</title>
 
     <link rel="icon" href="images/bookedup-favicon.ico">
-
     <link rel="stylesheet" href="styles/booked-up.css">
-    <link rel="icon" href="#">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">   
@@ -25,35 +22,35 @@
         <nav>
             <img id="logo" src="images/logo-bookedup.png" alt="booked up logo">
             <ul>
-                <li><a id="Discover"  class="active" href="discover.html" >Discover</a></li>
+                <li><a id="Discover" class="active" href="discover.html">Discover</a></li>
                 <li><a id="tbr" href="tbr.html">To Be Read</a></li>
                 <li><a id="review" href="review.html">My Reviews</a></li>
-                <li><a id="profile" href="profile.html">My profile</a></li>
+                <li><a id="profile" href="profile.html">My Profile</a></li>
             </ul>
         </nav>
     </header>
-    <div id="main-container">
+
+    <main id="main-container">
         <div id="book-container"></div>
-        <div id="book-popup" class="popup hidden">
+        
+        <div id="book-popup" class="hidden">
             <div class="popup-content">
-                <span class="popup-close">&times;</span>
                 <div class="popup-cover">
-                    <img id="popup-cover-image" src="" alt="Book Cover">
+                    <img id="popup-cover-image" alt="Book cover">
                 </div>
                 <div class="popup-info">
-                    <h2 id="popup-title">Title</h2>
-                    <p id="popup-author">Author</p>
-                    <p id="popup-rating">Rating</p>
-                    <button id="add-to-tbr" class="tbr-button">Add to My TBR Shelf</button>
-                    <div id="tbr-alert" class="hidden"></div>
-                    <button id="clear-tbr">Clear TBR Shelf</button>
-                </div>
-                <div class="popup-summary">
-                    <p id="popup-summary-text">Summary</p>
+                    <h3 id="popup-title"></h3>
+                    <p id="popup-author"></p>
+                    <p id="popup-rating"></p>
+                    <div id="popup-summary-text" class="popup-summary"></div>
+                    <button id="add-to-tbr">Add to TBR</button>
                 </div>
             </div>
+            <button class="popup-close">×</button>
         </div>
+
         <div class="right-content">
+            <button id="clear-tbr-btn">Clear TBR Shelf</button>
             <div class="bookshelf">
                 <div class="shelf"></div>
                 <div class="shelf"></div>
@@ -61,12 +58,14 @@
                 <div class="shelf"></div>
             </div>
         </div>
-    </div>
-</body>
-<footer>
-    <p>&copy; <span id="current-year"></span> Micaela Morales-Tapia, Kentucky, USA | GoogleBooks.com</p>
-    <p id="last-modified"></p>
-</footer>
-<script src="scripts/booked-up.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Micaela Morales-Tapia, Kentucky, USA | GoogleBooks.com</p>
+        <p id="last-modified"></p>
+    </footer>
+    
+    <script src="scripts/discover.js"></script>
 </body>
 </html>
+
