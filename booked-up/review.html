@@ -5,7 +5,7 @@
 
 <link rel="icon" href="images/bookedup-favicon.ico">
 
-<link rel="stylesheet" href="styles/booked-up.css">
+<link rel="stylesheet" href="styles/review.css">
 <link rel="icon" href="#">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,65 @@
         </ul>
     </nav>
 </header>
+
+<main>
+    <h1>My Reviews</h1>
+    <div id="reviews-container"></div>
+    <div id="review-popup" class="hidden">
+        <div class="review-form-content">
+            <button class="popup-close-btn">×</button>
+            <h2>Review Book</h2>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="read-dates">Reading Period:</label>
+                    <div class="date-inputs">
+                        <div>
+                            <label for="start-date">Started:</label>
+                            <input type="date" id="start-date" required>
+                        </div>
+                        <div>
+                            <label for="end-date">Finished:</label>
+                            <input type="date" id="end-date" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Rating:</label>
+                    <div class="star-rating-input">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="review-text">Your Review:</label>
+                    <textarea id="review-text" rows="5" placeholder="Share your thoughts about the book..."></textarea>
+                </div>
+    
+                <div class="form-group favorite-group">
+                    <label>
+                        <input type="checkbox" id="favorite-checkbox">
+                        <span class="favorite-heart">♥</span>
+                        Add to Favorites
+                    </label>
+                </div>
+    
+                <button type="submit" class="submit-review">Save Review</button>
+            </form>
+        </div>
+    </div>
+</main>
+
 </body>
 
 <footer>
     <p>&copy; <span id="current-year"></span> Micaela Morales-Tapia, Kentucky, USA | GoogleBooks.com</p>
     <p id="last-modified"></p>
 </footer>
-<script src="scripts/booked-up.js"></script>
+<script src="scripts/review.js"></script>
 </body>
 </html>
