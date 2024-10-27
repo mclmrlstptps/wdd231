@@ -13,7 +13,7 @@
 
     <link rel="icon" href="images/bookedup-favicon.ico">
 
-    <link rel="stylesheet" href="styles/booked-up.css">
+    <link rel="stylesheet" href="styles/profile.css">
     <link rel="icon" href="#">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,11 +33,41 @@
         </nav>
     </header>
 </body>
+<main>
+    <div class="tbr-section">
+        <h1>To Be Read</h1>
+        <div class="carousel-container">
+            <button class="carousel-button prev">‹</button>
+            <div class="carousel">
+                <div class="carousel-track"></div>
+            </div>
+            <button class="carousel-button next">›</button>
+        </div>
+    </div>
+
+    <div class="reading-stats-container">
+        <div class="read-books-grid">
+            <h2>Read Books</h2>
+            <div id="read-books-container"></div>
+        </div>
+        <div class="stats-panel">
+            <h2>Reading Stats</h2>
+            <div class="stats-content">
+                <div class="stat-item">
+                    <h3>Total Books Read</h3>
+                    <p id="total-books">0</p>
+                    <img id="book-icon"  src="images/book-icon.png" alt="Book Icon">
+                </div>
+                <!-- Add more stats as needed -->
+            </div>
+        </div>
+    </div>
+</main>
 
     <footer>
         <p>&copy; <span id="current-year"></span> Micaela Morales-Tapia, Kentucky, USA | GoogleBooks.com</p>
         <p id="last-modified"></p>
     </footer>
-    <script src="scripts/booked-up.js"></script>
+    <script src="scripts/profile.js"></script>
 </body>
 </html>
